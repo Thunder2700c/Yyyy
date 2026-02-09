@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 </head>
 <body>
 
@@ -18,10 +21,19 @@
     <div class="loader" id="loader">
         <div class="loader-content">
             <div class="loader-logo">A</div>
-            <div class="loader-bar">
-                <div class="loader-bar-fill"></div>
+            <div class="loader-text-wrap">
+                <span class="loader-letter">A</span>
+                <span class="loader-letter">B</span>
+                <span class="loader-letter">H</span>
+                <span class="loader-letter">I</span>
+                <span class="loader-letter">N</span>
+                <span class="loader-letter">O</span>
+                <span class="loader-letter">O</span>
+                <span class="loader-letter">R</span>
             </div>
-            <p class="loader-text">Loading Excellence...</p>
+            <div class="loader-bar">
+                <div class="loader-bar-fill" id="loaderFill"></div>
+            </div>
         </div>
     </div>
 
@@ -29,13 +41,10 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-logo">
-                <div class="logo-icon">
-                    <span>A</span>
-                    <div class="logo-glow"></div>
-                </div>
+                <div class="logo-icon"><span>A</span></div>
                 <div class="logo-text">
                     <span class="logo-name">Abhinoor</span>
-                    <span class="logo-title">Financial Analyst</span>
+                    <span class="logo-sub">Financial Analyst</span>
                 </div>
             </a>
             <ul class="nav-links" id="navLinks">
@@ -47,9 +56,7 @@
                 <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
@@ -57,39 +64,37 @@
     <!-- ==================== HERO ==================== -->
     <section class="hero" id="home">
         <div class="hero-bg">
-            <div class="hero-grid-lines"></div>
-            <div class="hero-glow hero-glow-1"></div>
-            <div class="hero-glow hero-glow-2"></div>
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-                <div class="shape shape-4"></div>
-                <div class="shape shape-5"></div>
-            </div>
+            <div class="hero-grid"></div>
+            <div class="hero-glow glow-1"></div>
+            <div class="hero-glow glow-2"></div>
+            <div class="hero-particles" id="heroParticles"></div>
         </div>
 
         <div class="hero-wrapper">
             <div class="hero-content">
-                <div class="hero-badge animate-up">
+                <div class="hero-badge" id="heroBadge">
                     <div class="badge-dot"></div>
                     <span>Available for Consultation</span>
                 </div>
-                <h1 class="hero-name animate-up delay-1">
-                    <span class="line">Abhinoor</span>
-                    <span class="line gold">Singh</span>
+
+                <h1 class="hero-name" id="heroName">
+                    <span class="hero-name-line" data-split>Abhinoor</span>
+                    <span class="hero-name-line gold" data-split>Singh</span>
                 </h1>
-                <div class="hero-title-wrapper animate-up delay-2">
-                    <div class="title-line"></div>
-                    <span class="hero-title">Financial Analyst</span>
-                    <div class="title-line"></div>
+
+                <div class="hero-title-row" id="heroTitle">
+                    <div class="title-line-left"></div>
+                    <span class="hero-title-text">Financial Analyst</span>
+                    <div class="title-line-right"></div>
                 </div>
-                <p class="hero-tagline animate-up delay-3">
+
+                <p class="hero-desc" id="heroDesc">
                     Providing quick and reliable financial assistance with
                     competitive interest rates. Your trusted partner for
                     personal and business loans.
                 </p>
-                <div class="hero-buttons animate-up delay-4">
+
+                <div class="hero-btns" id="heroBtns">
                     <a href="#contact" class="btn btn-gold">
                         <span>Get In Touch</span>
                         <i class="fas fa-arrow-right"></i>
@@ -101,85 +106,57 @@
                 </div>
             </div>
 
-            <div class="hero-visual animate-up delay-2">
-                <div class="hero-card-stack">
-                    <div class="hero-photo-frame">
-                        <!-- REPLACE: Add actual photo -->
-                        <div class="placeholder-photo">
-                            <i class="fas fa-user"></i>
-                            <span>Your Photo</span>
-                        </div>
-                        <!-- <img src="photo.jpg" alt="Abhinoor Singh"> -->
-                        <div class="photo-frame-border"></div>
-                        <div class="photo-frame-corner corner-tl"></div>
-                        <div class="photo-frame-corner corner-tr"></div>
-                        <div class="photo-frame-corner corner-bl"></div>
-                        <div class="photo-frame-corner corner-br"></div>
+            <div class="hero-visual" id="heroVisual">
+                <div class="hero-img-wrap">
+                    <div class="hero-img-frame">
+                        <img src="images/photo.png" alt="Abhinoor Singh">
+                        <div class="frame-border"></div>
+                        <div class="frame-corner c-tl"></div>
+                        <div class="frame-corner c-tr"></div>
+                        <div class="frame-corner c-bl"></div>
+                        <div class="frame-corner c-br"></div>
                     </div>
 
-                    <div class="hero-float-card float-card-1">
-                        <div class="float-card-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="float-card-info">
-                            <span class="float-card-value">Low</span>
-                            <span class="float-card-label">Interest Rates</span>
-                        </div>
+                    <div class="float-card fc-1" id="fc1">
+                        <div class="fc-icon"><i class="fas fa-chart-line"></i></div>
+                        <div><span class="fc-val">Low</span><span class="fc-label">Interest Rates</span></div>
                     </div>
-
-                    <div class="hero-float-card float-card-2">
-                        <div class="float-card-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="float-card-info">
-                            <span class="float-card-value">120+</span>
-                            <span class="float-card-label">Happy Clients</span>
-                        </div>
+                    <div class="float-card fc-2" id="fc2">
+                        <div class="fc-icon"><i class="fas fa-users"></i></div>
+                        <div><span class="fc-val">120+</span><span class="fc-label">Happy Clients</span></div>
                     </div>
-
-                    <div class="hero-float-card float-card-3">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="float-card fc-3" id="fc3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Stats Bar -->
-        <div class="hero-stats-bar animate-up delay-5">
-            <div class="stat-item">
-                <span class="stat-number" data-target="5">0</span>
-                <span class="stat-suffix">+</span>
-                <span class="stat-label">Years Experience</span>
+        <div class="hero-stats" id="heroStats">
+            <div class="h-stat">
+                <span class="h-stat-num" data-target="5">0</span><span class="h-stat-suf">+</span>
+                <span class="h-stat-label">Years Experience</span>
             </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="120">0</span>
-                <span class="stat-suffix">+</span>
-                <span class="stat-label">Clients Served</span>
+            <div class="h-stat-div"></div>
+            <div class="h-stat">
+                <span class="h-stat-num" data-target="120">0</span><span class="h-stat-suf">+</span>
+                <span class="h-stat-label">Clients Served</span>
             </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="50">0</span>
-                <span class="stat-suffix">+</span>
-                <span class="stat-label">Loans Provided</span>
+            <div class="h-stat-div"></div>
+            <div class="h-stat">
+                <span class="h-stat-num" data-target="50">0</span><span class="h-stat-suf">+</span>
+                <span class="h-stat-label">Loans Provided</span>
             </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="98">0</span>
-                <span class="stat-suffix">%</span>
-                <span class="stat-label">Client Satisfaction</span>
+            <div class="h-stat-div"></div>
+            <div class="h-stat">
+                <span class="h-stat-num" data-target="98">0</span><span class="h-stat-suf">%</span>
+                <span class="h-stat-label">Satisfaction</span>
             </div>
         </div>
 
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="mouse-wheel"></div>
-            </div>
-            <span>Scroll to explore</span>
+        <div class="scroll-down">
+            <div class="mouse"><div class="wheel"></div></div>
+            <span>Scroll</span>
         </div>
     </section>
 
@@ -187,29 +164,25 @@
     <section class="section about" id="about">
         <div class="container">
             <div class="about-grid">
-                <div class="about-visual animate-on-scroll">
-                    <div class="about-image-container">
-                        <div class="about-image-frame">
-                            <!-- REPLACE: Add about photo -->
-                            <div class="placeholder-photo about-photo">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
-                            <!-- <img src="about-photo.jpg" alt="About Abhinoor"> -->
+                <div class="about-visual">
+                    <div class="about-img-wrap">
+                        <div class="about-img-box">
+                            <img src="images/about-photo.png" alt="About Abhinoor">
                         </div>
-                        <div class="about-accent-box">
-                            <span class="accent-number">5+</span>
-                            <span class="accent-text">Years of<br>Excellence</span>
+                        <div class="about-exp-badge">
+                            <span class="exp-num">5+</span>
+                            <span class="exp-txt">Years of<br>Excellence</span>
                         </div>
-                        <div class="about-dot-pattern"></div>
+                        <div class="about-dots"></div>
                     </div>
                 </div>
 
-                <div class="about-content animate-on-scroll">
-                    <div class="section-label">
+                <div class="about-content">
+                    <div class="sec-label">
                         <div class="label-line"></div>
                         <span>About Me</span>
                     </div>
-                    <h2 class="about-title">
+                    <h2 class="about-heading">
                         A Trusted <span class="gold-text">Financial Analyst</span>
                         & Money Lender
                     </h2>
@@ -225,45 +198,31 @@
                         flexible repayment options and complete transparency.
                     </p>
 
-                    <div class="about-info-grid">
+                    <div class="about-info">
                         <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-user"></i></div>
-                            <div>
-                                <span class="info-label">Name</span>
-                                <span class="info-value">Abhinoor Singh</span>
-                            </div>
+                            <div class="info-ic"><i class="fas fa-user"></i></div>
+                            <div><span class="info-lbl">Name</span><span class="info-val">Abhinoor Singh</span></div>
                         </div>
                         <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                            <div>
-                                <span class="info-label">Email</span>
-                                <span class="info-value">sabhinoor327@gmail.com</span>
-                            </div>
+                            <div class="info-ic"><i class="fab fa-whatsapp"></i></div>
+                            <div><span class="info-lbl">WhatsApp</span><span class="info-val">+91 80541 86763</span></div>
                         </div>
                         <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-phone"></i></div>
-                            <div>
-                                <span class="info-label">Phone</span>
-                                <span class="info-value">+91 80541 86763</span>
-                            </div>
+                            <div class="info-ic"><i class="fas fa-phone"></i></div>
+                            <div><span class="info-lbl">Phone</span><span class="info-val">+91 80541 86763</span></div>
                         </div>
                         <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div>
-                                <span class="info-label">Location</span>
-                                <span class="info-value">Punjab, India</span>
-                            </div>
+                            <div class="info-ic"><i class="fas fa-map-marker-alt"></i></div>
+                            <div><span class="info-lbl">Location</span><span class="info-val">Punjab, India</span></div>
                         </div>
                     </div>
 
-                    <div class="about-buttons">
+                    <div class="about-btns">
                         <a href="#contact" class="btn btn-gold">
-                            <span>Let's Talk</span>
-                            <i class="fas fa-arrow-right"></i>
+                            <span>Let's Talk</span><i class="fas fa-arrow-right"></i>
                         </a>
-                        <a href="tel:+918054186763" class="btn btn-outline-gold">
-                            <i class="fas fa-phone"></i>
-                            <span>Call Me</span>
+                        <a href="https://wa.me/918054186763" target="_blank" class="btn btn-outline-gold">
+                            <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
                         </a>
                     </div>
                 </div>
@@ -275,30 +234,18 @@
     <div class="marquee-section">
         <div class="marquee-track">
             <div class="marquee-content">
-                <span>Money Lending</span>
-                <span class="marquee-dot">◆</span>
-                <span>Interest Rate Loans</span>
-                <span class="marquee-dot">◆</span>
-                <span>Personal Loans</span>
-                <span class="marquee-dot">◆</span>
-                <span>Business Loans</span>
-                <span class="marquee-dot">◆</span>
-                <span>Flexible Repayment</span>
-                <span class="marquee-dot">◆</span>
-                <span>Trusted Finance</span>
-                <span class="marquee-dot">◆</span>
-                <span>Money Lending</span>
-                <span class="marquee-dot">◆</span>
-                <span>Interest Rate Loans</span>
-                <span class="marquee-dot">◆</span>
-                <span>Personal Loans</span>
-                <span class="marquee-dot">◆</span>
-                <span>Business Loans</span>
-                <span class="marquee-dot">◆</span>
-                <span>Flexible Repayment</span>
-                <span class="marquee-dot">◆</span>
-                <span>Trusted Finance</span>
-                <span class="marquee-dot">◆</span>
+                <span>Money Lending</span><span class="m-dot">◆</span>
+                <span>Interest Rate Loans</span><span class="m-dot">◆</span>
+                <span>Personal Loans</span><span class="m-dot">◆</span>
+                <span>Business Loans</span><span class="m-dot">◆</span>
+                <span>Flexible Repayment</span><span class="m-dot">◆</span>
+                <span>Trusted Finance</span><span class="m-dot">◆</span>
+                <span>Money Lending</span><span class="m-dot">◆</span>
+                <span>Interest Rate Loans</span><span class="m-dot">◆</span>
+                <span>Personal Loans</span><span class="m-dot">◆</span>
+                <span>Business Loans</span><span class="m-dot">◆</span>
+                <span>Flexible Repayment</span><span class="m-dot">◆</span>
+                <span>Trusted Finance</span><span class="m-dot">◆</span>
             </div>
         </div>
     </div>
@@ -306,104 +253,75 @@
     <!-- ==================== SERVICES ==================== -->
     <section class="section services" id="services">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <div class="section-label center">
+            <div class="sec-header">
+                <div class="sec-label center">
                     <div class="label-line"></div>
                     <span>What I Offer</span>
                     <div class="label-line"></div>
                 </div>
-                <h2 class="section-title">My <span class="gold-text">Services</span></h2>
-                <p class="section-subtitle">Reliable financial solutions with competitive interest rates</p>
+                <h2 class="sec-title">My <span class="gold-text">Services</span></h2>
+                <p class="sec-sub">Reliable financial solutions with competitive interest rates</p>
             </div>
 
             <div class="services-grid">
-                <div class="service-card animate-on-scroll" data-delay="0">
-                    <div class="service-card-bg"></div>
-                    <div class="service-card-content">
-                        <div class="service-num">01</div>
-                        <div class="service-icon-wrap">
-                            <i class="fas fa-hand-holding-usd"></i>
-                        </div>
+                <div class="srv-card">
+                    <div class="srv-bg"></div>
+                    <div class="srv-inner">
+                        <div class="srv-num">01</div>
+                        <div class="srv-icon"><i class="fas fa-hand-holding-usd"></i></div>
                         <h3>Money Lending</h3>
                         <p>Providing loans and financial assistance at competitive interest rates for personal and business needs.</p>
-                        <div class="service-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
+                        <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
                     </div>
                 </div>
-
-                <div class="service-card animate-on-scroll" data-delay="100">
-                    <div class="service-card-bg"></div>
-                    <div class="service-card-content">
-                        <div class="service-num">02</div>
-                        <div class="service-icon-wrap">
-                            <i class="fas fa-percentage"></i>
-                        </div>
+                <div class="srv-card">
+                    <div class="srv-bg"></div>
+                    <div class="srv-inner">
+                        <div class="srv-num">02</div>
+                        <div class="srv-icon"><i class="fas fa-percentage"></i></div>
                         <h3>Competitive Interest Rates</h3>
-                        <p>Offering flexible and affordable interest rates tailored to suit your financial situation and repayment capacity.</p>
-                        <div class="service-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
+                        <p>Offering flexible and affordable interest rates tailored to suit your financial situation.</p>
+                        <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
                     </div>
                 </div>
-
-                <div class="service-card animate-on-scroll" data-delay="200">
-                    <div class="service-card-bg"></div>
-                    <div class="service-card-content">
-                        <div class="service-num">03</div>
-                        <div class="service-icon-wrap">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
+                <div class="srv-card">
+                    <div class="srv-bg"></div>
+                    <div class="srv-inner">
+                        <div class="srv-num">03</div>
+                        <div class="srv-icon"><i class="fas fa-user-tie"></i></div>
                         <h3>Personal Loans</h3>
-                        <p>Quick and hassle-free personal loans for emergencies, education, medical expenses, or any personal requirements.</p>
-                        <div class="service-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
+                        <p>Quick and hassle-free personal loans for emergencies, education, medical, or any personal needs.</p>
+                        <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
                     </div>
                 </div>
-
-                <div class="service-card animate-on-scroll" data-delay="300">
-                    <div class="service-card-bg"></div>
-                    <div class="service-card-content">
-                        <div class="service-num">04</div>
-                        <div class="service-icon-wrap">
-                            <i class="fas fa-store"></i>
-                        </div>
+                <div class="srv-card">
+                    <div class="srv-bg"></div>
+                    <div class="srv-inner">
+                        <div class="srv-num">04</div>
+                        <div class="srv-icon"><i class="fas fa-store"></i></div>
                         <h3>Business Loans</h3>
-                        <p>Funding solutions for small businesses, startups, and entrepreneurs to grow and expand their ventures.</p>
-                        <div class="service-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
+                        <p>Funding solutions for small businesses, startups, and entrepreneurs to grow their ventures.</p>
+                        <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
                     </div>
                 </div>
-
-                <div class="service-card animate-on-scroll" data-delay="400">
-                    <div class="service-card-bg"></div>
-                    <div class="service-card-content">
-                        <div class="service-num">05</div>
-                        <div class="service-icon-wrap">
-                            <i class="fas fa-file-contract"></i>
-                        </div>
-                        <h3>Flexible Repayment Plans</h3>
-                        <p>Customizable repayment schedules — monthly, quarterly, or as per mutual agreement for your convenience.</p>
-                        <div class="service-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
+                <div class="srv-card">
+                    <div class="srv-bg"></div>
+                    <div class="srv-inner">
+                        <div class="srv-num">05</div>
+                        <div class="srv-icon"><i class="fas fa-file-contract"></i></div>
+                        <h3>Flexible Repayment</h3>
+                        <p>Customizable repayment schedules — monthly, quarterly, or as per mutual agreement.</p>
+                        <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
                     </div>
                 </div>
-
-                <div class="service-card animate-on-scroll" data-delay="500">
-                    <div class="service-card-bg"></div>
-                    <div class="service-card-content">
-                        <div class="service-num">06</div>
-                        <div class="service-icon-wrap">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
+                <div class="srv-card">
+                    <div class="srv-bg"></div>
+                    <div class="srv-inner">
+                        <div class="srv-num">06</div>
+                        <div class="srv-icon"><i class="fas fa-shield-alt"></i></div>
                         <h3>Trusted & Secure</h3>
-                        <p>Transparent dealings with proper documentation. Your trust and financial security is our top priority.</p>
-                        <div class="service-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
+                        <p>Transparent dealings with proper documentation. Your trust and security is our top priority.</p>
+                        <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
                     </div>
                 </div>
             </div>
@@ -413,114 +331,52 @@
     <!-- ==================== SKILLS ==================== -->
     <section class="section skills" id="skills">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <div class="section-label center">
+            <div class="sec-header">
+                <div class="sec-label center">
                     <div class="label-line"></div>
                     <span>My Expertise</span>
                     <div class="label-line"></div>
                 </div>
-                <h2 class="section-title">Skills & <span class="gold-text">Expertise</span></h2>
-                <p class="section-subtitle">Core competencies developed through years of professional experience</p>
+                <h2 class="sec-title">Skills & <span class="gold-text">Expertise</span></h2>
+                <p class="sec-sub">Core competencies developed through years of experience</p>
             </div>
 
             <div class="skills-layout">
-                <div class="skills-bars animate-on-scroll">
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Financial Analysis</span>
-                            <span class="skill-percent">95%</span>
-                        </div>
-                        <div class="skill-track">
-                            <div class="skill-fill" data-width="95">
-                                <div class="skill-fill-glow"></div>
-                            </div>
-                        </div>
+                <div class="skills-bars">
+                    <div class="sk-item">
+                        <div class="sk-head"><span>Financial Analysis</span><span class="sk-pct">95%</span></div>
+                        <div class="sk-track"><div class="sk-fill" data-w="95"></div></div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Loan Management</span>
-                            <span class="skill-percent">92%</span>
-                        </div>
-                        <div class="skill-track">
-                            <div class="skill-fill" data-width="92">
-                                <div class="skill-fill-glow"></div>
-                            </div>
-                        </div>
+                    <div class="sk-item">
+                        <div class="sk-head"><span>Loan Management</span><span class="sk-pct">92%</span></div>
+                        <div class="sk-track"><div class="sk-fill" data-w="92"></div></div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Risk Assessment</span>
-                            <span class="skill-percent">88%</span>
-                        </div>
-                        <div class="skill-track">
-                            <div class="skill-fill" data-width="88">
-                                <div class="skill-fill-glow"></div>
-                            </div>
-                        </div>
+                    <div class="sk-item">
+                        <div class="sk-head"><span>Risk Assessment</span><span class="sk-pct">88%</span></div>
+                        <div class="sk-track"><div class="sk-fill" data-w="88"></div></div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Interest Rate Planning</span>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-track">
-                            <div class="skill-fill" data-width="90">
-                                <div class="skill-fill-glow"></div>
-                            </div>
-                        </div>
+                    <div class="sk-item">
+                        <div class="sk-head"><span>Interest Rate Planning</span><span class="sk-pct">90%</span></div>
+                        <div class="sk-track"><div class="sk-fill" data-w="90"></div></div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Client Relations</span>
-                            <span class="skill-percent">96%</span>
-                        </div>
-                        <div class="skill-track">
-                            <div class="skill-fill" data-width="96">
-                                <div class="skill-fill-glow"></div>
-                            </div>
-                        </div>
+                    <div class="sk-item">
+                        <div class="sk-head"><span>Client Relations</span><span class="sk-pct">96%</span></div>
+                        <div class="sk-track"><div class="sk-fill" data-w="96"></div></div>
                     </div>
                 </div>
 
-                <div class="skills-tools animate-on-scroll">
+                <div class="skills-tools">
                     <h3>Tools & Technologies</h3>
                     <div class="tools-grid">
-                        <div class="tool-item">
-                            <i class="fas fa-file-excel"></i>
-                            <span>Excel</span>
-                        </div>
-                        <div class="tool-item">
-                            <i class="fas fa-chart-bar"></i>
-                            <span>Power BI</span>
-                        </div>
-                        <div class="tool-item">
-                            <i class="fas fa-database"></i>
-                            <span>SQL</span>
-                        </div>
-                        <div class="tool-item">
-                            <i class="fas fa-book"></i>
-                            <span>Tally</span>
-                        </div>
-                        <div class="tool-item">
-                            <i class="fas fa-cogs"></i>
-                            <span>SAP</span>
-                        </div>
-                        <div class="tool-item">
-                            <i class="fas fa-chart-area"></i>
-                            <span>Tableau</span>
-                        </div>
-                        <div class="tool-item">
-                            <i class="fas fa-code"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="tool-item">
-                            <i class="fas fa-receipt"></i>
-                            <span>QuickBooks</span>
-                        </div>
-                        <div class="tool-item">
-                            <i class="fas fa-broadcast-tower"></i>
-                            <span>Bloomberg</span>
-                        </div>
+                        <div class="tool"><i class="fas fa-file-excel"></i><span>Excel</span></div>
+                        <div class="tool"><i class="fas fa-chart-bar"></i><span>Power BI</span></div>
+                        <div class="tool"><i class="fas fa-database"></i><span>SQL</span></div>
+                        <div class="tool"><i class="fas fa-book"></i><span>Tally</span></div>
+                        <div class="tool"><i class="fas fa-cogs"></i><span>SAP</span></div>
+                        <div class="tool"><i class="fas fa-chart-area"></i><span>Tableau</span></div>
+                        <div class="tool"><i class="fas fa-code"></i><span>Python</span></div>
+                        <div class="tool"><i class="fas fa-receipt"></i><span>QuickBooks</span></div>
+                        <div class="tool"><i class="fas fa-broadcast-tower"></i><span>Bloomberg</span></div>
                     </div>
                 </div>
             </div>
@@ -530,65 +386,26 @@
     <!-- ==================== VISITING CARD ==================== -->
     <section class="section vcard-section" id="card">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <div class="section-label center">
+            <div class="sec-header">
+                <div class="sec-label center">
                     <div class="label-line"></div>
                     <span>My Card</span>
                     <div class="label-line"></div>
                 </div>
-                <h2 class="section-title">Visiting <span class="gold-text">Card</span></h2>
-                <p class="section-subtitle">Click on the card to see the other side</p>
+                <h2 class="sec-title">Visiting <span class="gold-text">Card</span></h2>
+                <p class="sec-sub">Click on the card to flip</p>
             </div>
 
-            <div class="vcard-wrapper animate-on-scroll">
+            <div class="vcard-wrap">
                 <div class="vcard-3d" id="vcard3d">
-                    <!-- Front -->
                     <div class="vcard-face vcard-front">
-                        <div class="vcard-pattern"></div>
-                        <div class="vcard-front-content">
-                            <div class="vcard-left">
-                                <div class="vcard-logo-box">A</div>
-                            </div>
-                            <div class="vcard-right">
-                                <h3 class="vcard-name">Abhinoor Singh</h3>
-                                <p class="vcard-role">Financial Analyst</p>
-                                <div class="vcard-separator"></div>
-                                <div class="vcard-details">
-                                    <div class="vcard-row">
-                                        <i class="fas fa-phone"></i>
-                                        <span>+91 80541 86763</span>
-                                    </div>
-                                    <div class="vcard-row">
-                                        <i class="fas fa-envelope"></i>
-                                        <span>sabhinoor327@gmail.com</span>
-                                    </div>
-                                    <div class="vcard-row">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span>Punjab, India</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="vcard-gold-strip"></div>
+                        <img src="images/card-front.png" alt="Card Front">
                     </div>
-                    <!-- Back -->
                     <div class="vcard-face vcard-back">
-                        <div class="vcard-pattern"></div>
-                        <div class="vcard-back-content">
-                            <!-- REPLACE: Add actual visiting card photo -->
-                            <div class="vcard-back-placeholder">
-                                <i class="fas fa-id-card"></i>
-                                <p>Your Visiting Card Photo</p>
-                                <span>Replace this with the actual image</span>
-                            </div>
-                            <!-- <img src="visiting-card.jpg" alt="Visiting Card"> -->
-                        </div>
-                        <div class="vcard-gold-strip"></div>
+                        <img src="images/card-back.png" alt="Card Back">
                     </div>
                 </div>
-                <p class="vcard-hint">
-                    <i class="fas fa-hand-pointer"></i> Click to flip the card
-                </p>
+                <p class="vcard-hint"><i class="fas fa-hand-pointer"></i> Click to flip</p>
             </div>
         </div>
     </section>
@@ -596,84 +413,73 @@
     <!-- ==================== CONTACT ==================== -->
     <section class="section contact" id="contact">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <div class="section-label center">
+            <div class="sec-header">
+                <div class="sec-label center">
                     <div class="label-line"></div>
                     <span>Get In Touch</span>
                     <div class="label-line"></div>
                 </div>
-                <h2 class="section-title">Contact <span class="gold-text">Me</span></h2>
-                <p class="section-subtitle">Let's discuss how I can help with your financial needs</p>
+                <h2 class="sec-title">Contact <span class="gold-text">Me</span></h2>
+                <p class="sec-sub">Let's discuss your financial needs</p>
             </div>
 
             <div class="contact-layout">
-                <div class="contact-cards animate-on-scroll">
-                    <a href="tel:+918054186763" class="contact-card">
-                        <div class="cc-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
+                <div class="contact-cards">
+                    <a href="tel:+918054186763" class="cc-card">
+                        <div class="cc-ic"><i class="fas fa-phone"></i></div>
                         <h4>Phone</h4>
                         <p>+91 80541 86763</p>
-                        <span class="cc-action">Call Now <i class="fas fa-arrow-right"></i></span>
+                        <span class="cc-act">Call Now <i class="fas fa-arrow-right"></i></span>
                     </a>
-                    <a href="mailto:sabhinoor327@gmail.com" class="contact-card">
-                        <div class="cc-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h4>Email</h4>
-                        <p>sabhinoor327@gmail.com</p>
-                        <span class="cc-action">Send Email <i class="fas fa-arrow-right"></i></span>
+                    <a href="https://wa.me/918054186763" target="_blank" class="cc-card">
+                        <div class="cc-ic"><i class="fab fa-whatsapp"></i></div>
+                        <h4>WhatsApp</h4>
+                        <p>+91 80541 86763</p>
+                        <span class="cc-act">Message <i class="fas fa-arrow-right"></i></span>
                     </a>
-                    <div class="contact-card">
-                        <div class="cc-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h4>Location</h4>
-                        <p>Punjab, India</p>
-                        <span class="cc-action">View Map <i class="fas fa-arrow-right"></i></span>
-                    </div>
+                    <a href="https://www.instagram.com/finance_analyst26" target="_blank" class="cc-card">
+                        <div class="cc-ic"><i class="fab fa-instagram"></i></div>
+                        <h4>Instagram</h4>
+                        <p>@finance_analyst26</p>
+                        <span class="cc-act">Follow <i class="fas fa-arrow-right"></i></span>
+                    </a>
                 </div>
 
-                <div class="contact-form-section animate-on-scroll">
+                <div class="contact-form-area">
                     <div class="contact-form-box">
-                        <h3>Send Me a <span class="gold-text">Message</span></h3>
-                        <form class="contact-form" id="contactForm">
+                        <h3>Send a <span class="gold-text">Message</span></h3>
+                        <form id="contactForm">
                             <div class="form-row">
-                                <div class="form-group">
-                                    <input type="text" id="name" required placeholder=" ">
-                                    <label for="name">Full Name</label>
-                                    <div class="form-line"></div>
+                                <div class="form-grp">
+                                    <input type="text" id="fname" required placeholder=" ">
+                                    <label for="fname">Full Name</label>
                                 </div>
-                                <div class="form-group">
-                                    <input type="email" id="email" required placeholder=" ">
-                                    <label for="email">Email Address</label>
-                                    <div class="form-line"></div>
+                                <div class="form-grp">
+                                    <input type="text" id="fphone" required placeholder=" ">
+                                    <label for="fphone">Phone Number</label>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <input type="text" id="subject" required placeholder=" ">
-                                <label for="subject">Subject</label>
-                                <div class="form-line"></div>
+                            <div class="form-grp">
+                                <input type="text" id="fsubject" required placeholder=" ">
+                                <label for="fsubject">Subject</label>
                             </div>
-                            <div class="form-group">
-                                <textarea id="message" rows="5" required placeholder=" "></textarea>
-                                <label for="message">Your Message</label>
-                                <div class="form-line"></div>
+                            <div class="form-grp">
+                                <textarea id="fmessage" rows="5" required placeholder=" "></textarea>
+                                <label for="fmessage">Your Message</label>
                             </div>
                             <button type="submit" class="btn btn-gold btn-full">
-                                <span>Send Message</span>
-                                <i class="fas fa-paper-plane"></i>
+                                <span>Send via WhatsApp</span>
+                                <i class="fab fa-whatsapp"></i>
                             </button>
                         </form>
                     </div>
 
-                    <div class="social-section">
+                    <div class="social-area">
                         <p>Connect with me</p>
-                        <div class="social-links">
-                            <a href="#" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-btn" title="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="https://wa.me/918054186763" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <div class="socials">
+                            <a href="https://www.instagram.com/finance_analyst26" target="_blank" class="soc-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/918054186763" target="_blank" class="soc-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="tel:+918054186763" class="soc-btn" title="Call"><i class="fas fa-phone"></i></a>
                         </div>
                     </div>
                 </div>
@@ -687,20 +493,16 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <div class="logo-icon"><span>A</span></div>
-                    <div>
-                        <h4>Abhinoor Singh</h4>
-                        <p>Financial Analyst</p>
-                    </div>
+                    <div><h4>Abhinoor Singh</h4><p>Financial Analyst</p></div>
                 </div>
                 <div class="footer-nav">
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
                     <a href="#services">Services</a>
-                    <a href="#skills">Expertise</a>
                     <a href="#contact">Contact</a>
                 </div>
             </div>
-            <div class="footer-divider"></div>
+            <div class="footer-line"></div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Abhinoor Singh. All rights reserved.</p>
                 <p>Crafted with <i class="fas fa-heart gold-text"></i> by Gurtej Singh</p>
@@ -708,11 +510,8 @@
         </div>
     </footer>
 
-    <!-- Back to Top -->
-    <button class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
     <script src="script.js"></script>
 </body>
-                                                           </html>
+                            </html>
