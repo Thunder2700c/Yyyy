@@ -6,219 +6,312 @@
     <title>Abhinoor Singh | Financial Analyst</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Cursor (desktop only) -->
-    <div class="cursor-dot" id="cursorDot"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
-
-    <!-- Loader -->
-    <div class="loader" id="loader">
-        <div class="loader-inner">
-            <div class="loader-logo">A</div>
-            <div class="loader-name">
-                <span>A</span><span>B</span><span>H</span><span>I</span><span>N</span><span>O</span><span>O</span><span>R</span>
+    <!-- ============ PRELOADER ============ -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <div class="preloader-circle"></div>
+                <span class="preloader-letter">A</span>
             </div>
-            <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+            <div class="preloader-text">
+                <span>A</span><span>b</span><span>h</span><span>i</span><span>n</span><span>o</span><span>o</span><span>r</span>
+                <span>&nbsp;</span>
+                <span>S</span><span>i</span><span>n</span><span>g</span><span>h</span>
+            </div>
+            <div class="preloader-progress">
+                <div class="preloader-progress-bar" id="preloaderBar"></div>
+            </div>
+            <p class="preloader-tagline">Financial Analyst</p>
         </div>
     </div>
 
-    <!-- ==================== NAVBAR ==================== -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <div class="logo-icon"><span>A</span></div>
-                <div class="logo-text">
-                    <span class="logo-name">Abhinoor</span>
-                    <span class="logo-sub">Financial Analyst</span>
+    <!-- ============ CUSTOM CURSOR ============ -->
+    <div class="custom-cursor" id="customCursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-outline"></div>
+    </div>
+
+    <!-- ============ NAVIGATION ============ -->
+    <header class="main-header" id="mainHeader">
+        <div class="header-container">
+            <a href="#hero" class="brand">
+                <div class="brand-icon">A</div>
+                <div class="brand-text">
+                    <strong>Abhinoor</strong>
+                    <small>Financial Analyst</small>
                 </div>
             </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#skills" class="nav-link">Expertise</a></li>
-                <li><a href="#card" class="nav-link">V-Card</a></li>
-                <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- ==================== HERO ==================== -->
-    <section class="hero" id="home">
-        <div class="hero-bg">
-            <div class="hero-grid"></div>
-            <div class="hero-glow glow-1"></div>
-            <div class="hero-glow glow-2"></div>
-            <div class="hero-particles" id="heroParticles"></div>
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#hero" class="nav-item active" data-section="hero">Home</a></li>
+                    <li><a href="#about" class="nav-item" data-section="about">About</a></li>
+                    <li><a href="#services" class="nav-item" data-section="services">Services</a></li>
+                    <li><a href="#expertise" class="nav-item" data-section="expertise">Expertise</a></li>
+                    <li><a href="#vcard" class="nav-item" data-section="vcard">V-Card</a></li>
+                    <li><a href="#contact" class="nav-item nav-item-cta" data-section="contact">Get In Touch</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============ MOBILE MENU OVERLAY ============ -->
+    <div class="mobile-menu-overlay" id="mobileOverlay">
+        <ul class="mobile-menu">
+            <li><a href="#hero" class="mobile-link">Home</a></li>
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#services" class="mobile-link">Services</a></li>
+            <li><a href="#expertise" class="mobile-link">Expertise</a></li>
+            <li><a href="#vcard" class="mobile-link">V-Card</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <a href="https://wa.me/918054186763" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/finance_analyst26" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="tel:+918054186763"><i class="fas fa-phone"></i></a>
+        </div>
+    </div>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero-section" id="hero">
+        <!-- Background Effects -->
+        <div class="hero-bg-layer">
+            <div class="hero-noise"></div>
+            <div class="hero-gradient-orb orb-1"></div>
+            <div class="hero-gradient-orb orb-2"></div>
+            <div class="hero-grid-pattern"></div>
+            <div class="hero-particles-container" id="particlesContainer"></div>
         </div>
 
-        <div class="hero-wrapper">
-            <div class="hero-content">
-                <div class="hero-badge gsap-hero">
-                    <div class="badge-dot"></div>
-                    <span>Available for Consultation</span>
+        <div class="hero-container">
+            <div class="hero-left">
+                <!-- Availability Badge -->
+                <div class="availability-badge" data-animate="hero">
+                    <span class="avail-dot"></span>
+                    <span class="avail-text">Available for Consultation</span>
                 </div>
 
-                <h1 class="hero-name">
-                    <span class="hero-line gsap-hero" data-split>Abhinoor</span>
-                    <span class="hero-line gold gsap-hero" data-split>Singh</span>
+                <!-- Main Heading -->
+                <h1 class="hero-heading" data-animate="hero">
+                    <span class="hero-heading-line">
+                        <span class="hero-word" data-hero-text>Abhinoor</span>
+                    </span>
+                    <span class="hero-heading-line">
+                        <span class="hero-word hero-word-gold" data-hero-text>Singh</span>
+                    </span>
                 </h1>
 
-                <div class="hero-title-row gsap-hero">
-                    <div class="t-line t-line-l"></div>
-                    <span class="hero-title-text">Financial Analyst</span>
-                    <div class="t-line t-line-r"></div>
+                <!-- Title -->
+                <div class="hero-designation" data-animate="hero">
+                    <span class="desig-line"></span>
+                    <span class="desig-text">Financial Analyst</span>
+                    <span class="desig-line"></span>
                 </div>
 
-                <p class="hero-desc gsap-hero">
+                <!-- Description -->
+                <p class="hero-description" data-animate="hero">
                     Providing quick and reliable financial assistance with
                     competitive interest rates. Your trusted partner for
                     personal and business loans.
                 </p>
 
-                <div class="hero-btns gsap-hero">
-                    <a href="#contact" class="btn btn-gold">
-                        <span>Get In Touch</span>
-                        <i class="fas fa-arrow-right"></i>
+                <!-- CTA Buttons -->
+                <div class="hero-cta-group" data-animate="hero">
+                    <a href="#contact" class="cta-btn cta-primary">
+                        <span class="cta-text">Get In Touch</span>
+                        <span class="cta-icon"><i class="fas fa-arrow-right"></i></span>
                     </a>
-                    <a href="#services" class="btn btn-outline-gold">
-                        <span>View Services</span>
-                        <i class="fas fa-chevron-down"></i>
+                    <a href="#services" class="cta-btn cta-secondary">
+                        <span class="cta-text">View Services</span>
+                        <span class="cta-icon"><i class="fas fa-chevron-down"></i></span>
                     </a>
                 </div>
             </div>
 
-            <div class="hero-visual gsap-hero">
-                <div class="hero-img-wrap">
-                    <div class="hero-img-frame">
-                        <img src="images/photo.png" alt="Abhinoor Singh" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                        <div class="img-placeholder" style="display:none">
+            <div class="hero-right" data-animate="hero">
+                <div class="hero-image-wrapper">
+                    <!-- Main Photo -->
+                    <div class="hero-image-card">
+                        <img src="images/photo.png" alt="Abhinoor Singh"
+                             onerror="this.style.display='none'; this.parentElement.querySelector('.hero-image-fallback').style.display='flex'">
+                        <div class="hero-image-fallback">
                             <i class="fas fa-user"></i>
                             <span>photo.png</span>
                         </div>
-                        <div class="frame-border"></div>
-                        <div class="frame-corner c-tl"></div>
-                        <div class="frame-corner c-tr"></div>
-                        <div class="frame-corner c-bl"></div>
-                        <div class="frame-corner c-br"></div>
+                        <div class="hero-image-border"></div>
                     </div>
 
-                    <div class="float-card fc-1 gsap-fc">
-                        <div class="fc-icon"><i class="fas fa-chart-line"></i></div>
-                        <div><span class="fc-val">Low</span><span class="fc-label">Interest Rates</span></div>
+                    <!-- Floating Info Cards -->
+                    <div class="info-float-card ifc-1">
+                        <div class="ifc-icon"><i class="fas fa-percentage"></i></div>
+                        <div class="ifc-content">
+                            <strong>Low</strong>
+                            <span>Interest Rates</span>
+                        </div>
                     </div>
-                    <div class="float-card fc-2 gsap-fc">
-                        <div class="fc-icon"><i class="fas fa-users"></i></div>
-                        <div><span class="fc-val">120+</span><span class="fc-label">Happy Clients</span></div>
+
+                    <div class="info-float-card ifc-2">
+                        <div class="ifc-icon"><i class="fas fa-users"></i></div>
+                        <div class="ifc-content">
+                            <strong>120+</strong>
+                            <span>Happy Clients</span>
+                        </div>
                     </div>
-                    <div class="float-card fc-3 gsap-fc">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+                    <div class="info-float-card ifc-3">
+                        <div class="ifc-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ifc-rating">5.0 Rating</span>
                     </div>
+
+                    <!-- Decorative Elements -->
+                    <div class="hero-decor-ring"></div>
+                    <div class="hero-decor-dots"></div>
                 </div>
             </div>
         </div>
 
-        <div class="hero-stats gsap-hero">
-            <div class="h-stat">
-                <span class="h-stat-num" data-target="5">0</span><span class="h-stat-suf">+</span>
-                <span class="h-stat-label">Years Experience</span>
+        <!-- Stats Strip -->
+        <div class="hero-stats-strip" data-animate="hero">
+            <div class="stat-box">
+                <div class="stat-value">
+                    <span class="counter" data-count="5">0</span><span class="stat-suffix">+</span>
+                </div>
+                <div class="stat-name">Years Experience</div>
             </div>
-            <div class="h-stat-div"></div>
-            <div class="h-stat">
-                <span class="h-stat-num" data-target="120">0</span><span class="h-stat-suf">+</span>
-                <span class="h-stat-label">Clients Served</span>
+            <div class="stat-separator"></div>
+            <div class="stat-box">
+                <div class="stat-value">
+                    <span class="counter" data-count="120">0</span><span class="stat-suffix">+</span>
+                </div>
+                <div class="stat-name">Clients Served</div>
             </div>
-            <div class="h-stat-div"></div>
-            <div class="h-stat">
-                <span class="h-stat-num" data-target="50">0</span><span class="h-stat-suf">+</span>
-                <span class="h-stat-label">Loans Provided</span>
+            <div class="stat-separator"></div>
+            <div class="stat-box">
+                <div class="stat-value">
+                    <span class="counter" data-count="50">0</span><span class="stat-suffix">+</span>
+                </div>
+                <div class="stat-name">Loans Provided</div>
             </div>
-            <div class="h-stat-div"></div>
-            <div class="h-stat">
-                <span class="h-stat-num" data-target="98">0</span><span class="h-stat-suf">%</span>
-                <span class="h-stat-label">Satisfaction</span>
+            <div class="stat-separator"></div>
+            <div class="stat-box">
+                <div class="stat-value">
+                    <span class="counter" data-count="98">0</span><span class="stat-suffix">%</span>
+                </div>
+                <div class="stat-name">Client Satisfaction</div>
             </div>
         </div>
 
-        <div class="scroll-down gsap-hero">
-            <div class="mouse"><div class="wheel"></div></div>
-            <span>Scroll</span>
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span class="scroll-text">Scroll Down</span>
         </div>
     </section>
 
-    <!-- ==================== ABOUT ==================== -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-visual gsap-reveal">
-                    <div class="about-img-wrap">
-                        <div class="about-img-box">
-                            <img src="images/about-photo.png" alt="About Abhinoor" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                            <div class="img-placeholder" style="display:none">
-                                <i class="fas fa-user-tie"></i>
-                                <span>about-photo.png</span>
-                            </div>
+    <!-- ============ ABOUT SECTION ============ -->
+    <section class="about-section" id="about">
+        <div class="section-container">
+            <div class="about-layout">
+                <!-- Left: Image -->
+                <div class="about-image-side" data-animate="scroll">
+                    <div class="about-image-frame">
+                        <img src="images/about-photo.png" alt="About Abhinoor"
+                             onerror="this.style.display='none'; this.parentElement.querySelector('.about-image-fallback').style.display='flex'">
+                        <div class="about-image-fallback">
+                            <i class="fas fa-user-tie"></i>
+                            <span>about-photo.png</span>
                         </div>
-                        <div class="about-badge">
-                            <span class="ab-num">5+</span>
-                            <span class="ab-txt">Years of<br>Excellence</span>
-                        </div>
-                        <div class="about-dots"></div>
                     </div>
+                    <div class="about-experience-tag">
+                        <span class="exp-number">5+</span>
+                        <span class="exp-label">Years of<br>Excellence</span>
+                    </div>
+                    <div class="about-decorative-dots"></div>
+                    <div class="about-decorative-line"></div>
                 </div>
 
-                <div class="about-content">
-                    <div class="sec-label gsap-reveal">
-                        <div class="label-line"></div>
-                        <span>About Me</span>
+                <!-- Right: Content -->
+                <div class="about-content-side">
+                    <div class="section-eyebrow" data-animate="scroll">
+                        <span class="eyebrow-line"></span>
+                        <span class="eyebrow-text">About Me</span>
                     </div>
-                    <h2 class="about-heading gsap-reveal">
-                        A Trusted <span class="gold-text">Financial Analyst</span>
+
+                    <h2 class="about-title" data-animate="scroll">
+                        A Trusted <span class="text-highlight">Financial Analyst</span>
                         & Money Lender
                     </h2>
-                    <p class="about-desc gsap-reveal">
+
+                    <p class="about-text" data-animate="scroll">
                         I am a trusted Financial Analyst and money lender with over 5 years
                         of experience in providing loans at competitive interest rates. I
                         specialize in helping individuals and businesses get the financial
                         support they need, when they need it.
                     </p>
-                    <p class="about-desc gsap-reveal">
+
+                    <p class="about-text" data-animate="scroll">
                         Whether it's a personal emergency, business expansion, or any
                         financial requirement — I offer quick, hassle-free loans with
                         flexible repayment options and complete transparency.
                     </p>
 
-                    <div class="about-info gsap-reveal">
-                        <div class="info-item">
-                            <div class="info-ic"><i class="fas fa-user"></i></div>
-                            <div><span class="info-lbl">Name</span><span class="info-val">Abhinoor Singh</span></div>
+                    <div class="about-details-grid" data-animate="scroll">
+                        <div class="about-detail">
+                            <div class="detail-icon"><i class="fas fa-user"></i></div>
+                            <div class="detail-info">
+                                <span class="detail-label">Name</span>
+                                <span class="detail-value">Abhinoor Singh</span>
+                            </div>
                         </div>
-                        <div class="info-item">
-                            <div class="info-ic"><i class="fab fa-whatsapp"></i></div>
-                            <div><span class="info-lbl">WhatsApp</span><span class="info-val">+91 80541 86763</span></div>
+                        <div class="about-detail">
+                            <div class="detail-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="detail-info">
+                                <span class="detail-label">WhatsApp</span>
+                                <span class="detail-value">+91 80541 86763</span>
+                            </div>
                         </div>
-                        <div class="info-item">
-                            <div class="info-ic"><i class="fas fa-phone"></i></div>
-                            <div><span class="info-lbl">Phone</span><span class="info-val">+91 80541 86763</span></div>
+                        <div class="about-detail">
+                            <div class="detail-icon"><i class="fas fa-phone"></i></div>
+                            <div class="detail-info">
+                                <span class="detail-label">Phone</span>
+                                <span class="detail-value">+91 80541 86763</span>
+                            </div>
                         </div>
-                        <div class="info-item">
-                            <div class="info-ic"><i class="fas fa-map-marker-alt"></i></div>
-                            <div><span class="info-lbl">Location</span><span class="info-val">Punjab, India</span></div>
+                        <div class="about-detail">
+                            <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="detail-info">
+                                <span class="detail-label">Location</span>
+                                <span class="detail-value">Punjab, India</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="about-btns gsap-reveal">
-                        <a href="#contact" class="btn btn-gold">
-                            <span>Let's Talk</span><i class="fas fa-arrow-right"></i>
+                    <div class="about-actions" data-animate="scroll">
+                        <a href="#contact" class="cta-btn cta-primary">
+                            <span class="cta-text">Let's Talk</span>
+                            <span class="cta-icon"><i class="fas fa-arrow-right"></i></span>
                         </a>
-                        <a href="https://wa.me/918054186763" target="_blank" class="btn btn-outline-gold">
-                            <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
+                        <a href="https://wa.me/918054186763" target="_blank" class="cta-btn cta-secondary">
+                            <i class="fab fa-whatsapp"></i>
+                            <span class="cta-text">WhatsApp Me</span>
                         </a>
                     </div>
                 </div>
@@ -226,299 +319,417 @@
         </div>
     </section>
 
-    <!-- ==================== MARQUEE ==================== -->
-    <div class="marquee-section">
-        <div class="marquee-track">
-            <div class="marquee-content">
-                <span>Money Lending</span><span class="m-dot">◆</span>
-                <span>Interest Rate Loans</span><span class="m-dot">◆</span>
-                <span>Personal Loans</span><span class="m-dot">◆</span>
-                <span>Business Loans</span><span class="m-dot">◆</span>
-                <span>Flexible Repayment</span><span class="m-dot">◆</span>
-                <span>Trusted Finance</span><span class="m-dot">◆</span>
-                <span>Money Lending</span><span class="m-dot">◆</span>
-                <span>Interest Rate Loans</span><span class="m-dot">◆</span>
-                <span>Personal Loans</span><span class="m-dot">◆</span>
-                <span>Business Loans</span><span class="m-dot">◆</span>
-                <span>Flexible Repayment</span><span class="m-dot">◆</span>
-                <span>Trusted Finance</span><span class="m-dot">◆</span>
+    <!-- ============ MARQUEE STRIP ============ -->
+    <div class="marquee-strip">
+        <div class="marquee-inner">
+            <div class="marquee-slide">
+                <span class="marquee-item">Money Lending</span>
+                <span class="marquee-diamond">◆</span>
+                <span class="marquee-item">Interest Rate Loans</span>
+                <span class="marquee-diamond">◆</span>
+                <span class="marquee-item">Personal Loans</span>
+                <span class="marquee-diamond">◆</span>
+                <span class="marquee-item">Business Loans</span>
+                <span class="marquee-diamond">◆</span>
+                <span class="marquee-item">Flexible Repayment</span>
+                <span class="marquee-diamond">◆</span>
+                <span class="marquee-item">Trusted Finance</span>
+                <span class="marquee-diamond">◆</span>
+            </div>
+            <div class="marquee-slide">
+                <span class="marquee-item">Money Lending</span>
+                <span class="marquee-diamond">◆</span>
+                <span class="marquee-item">Interest Rate Loans</span>
+                <span class="marquee-diamond">◆</span>
+                <span class="marquee-item">Personal Loans</span>
+                <span class="marquee-diamond">◆</span>
+                <span class="marquee-item">Business Loans</span>
+                <span class="marquee-diamond">◆</span>
+                <span class="marquee-item">Flexible Repayment</span>
+                <span class="marquee-diamond">◆</span>
+                <span class="marquee-item">Trusted Finance</span>
+                <span class="marquee-diamond">◆</span>
             </div>
         </div>
     </div>
 
-    <!-- ==================== SERVICES ==================== -->
-    <section class="section services" id="services">
-        <div class="container">
-            <div class="sec-header gsap-reveal">
-                <div class="sec-label center">
-                    <div class="label-line"></div>
-                    <span>What I Offer</span>
-                    <div class="label-line"></div>
+    <!-- ============ SERVICES SECTION ============ -->
+    <section class="services-section" id="services">
+        <div class="section-container">
+            <!-- Section Header -->
+            <div class="section-header" data-animate="scroll">
+                <div class="section-eyebrow centered">
+                    <span class="eyebrow-line"></span>
+                    <span class="eyebrow-text">What I Offer</span>
+                    <span class="eyebrow-line"></span>
                 </div>
-                <h2 class="sec-title">My <span class="gold-text">Services</span></h2>
-                <p class="sec-sub">Reliable financial solutions with competitive interest rates</p>
+                <h2 class="section-heading">My <span class="text-highlight">Services</span></h2>
+                <p class="section-subtext">Reliable financial solutions with competitive interest rates</p>
             </div>
 
+            <!-- Services Cards -->
             <div class="services-grid">
-                <div class="srv-card gsap-reveal">
-                    <div class="srv-bg"></div>
-                    <div class="srv-inner">
-                        <div class="srv-num">01</div>
-                        <div class="srv-icon"><i class="fas fa-hand-holding-usd"></i></div>
-                        <h3>Money Lending</h3>
-                        <p>Providing loans and financial assistance at competitive interest rates for personal and business needs.</p>
-                        <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
+                <article class="service-card" data-animate="scroll">
+                    <span class="service-index">01</span>
+                    <div class="service-icon-box">
+                        <i class="fas fa-hand-holding-usd"></i>
                     </div>
-                </div>
-                <div class="srv-card gsap-reveal">
-                    <div class="srv-bg"></div>
-                    <div class="srv-inner">
-                        <div class="srv-num">02</div>
-                        <div class="srv-icon"><i class="fas fa-percentage"></i></div>
-                        <h3>Competitive Interest Rates</h3>
-                        <p>Offering flexible and affordable interest rates tailored to suit your financial situation.</p>
-                        <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <h3 class="service-title">Money Lending</h3>
+                    <p class="service-desc">Providing loans and financial assistance at competitive interest rates for personal and business needs.</p>
+                    <div class="service-footer">
+                        <span class="service-link">Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
                     </div>
-                </div>
-                <div class="srv-card gsap-reveal">
-                    <div class="srv-bg"></div>
-                    <div class="srv-inner">
-                        <div class="srv-num">03</div>
-                        <div class="srv-icon"><i class="fas fa-user-tie"></i></div>
-                        <h3>Personal Loans</h3>
-                        <p>Quick and hassle-free personal loans for emergencies, education, medical, or any personal needs.</p>
-                        <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="service-hover-bg"></div>
+                </article>
+
+                <article class="service-card" data-animate="scroll">
+                    <span class="service-index">02</span>
+                    <div class="service-icon-box">
+                        <i class="fas fa-percentage"></i>
                     </div>
-                </div>
-                <div class="srv-card gsap-reveal">
-                    <div class="srv-bg"></div>
-                    <div class="srv-inner">
-                        <div class="srv-num">04</div>
-                        <div class="srv-icon"><i class="fas fa-store"></i></div>
-                        <h3>Business Loans</h3>
-                        <p>Funding solutions for small businesses, startups, and entrepreneurs to grow their ventures.</p>
-                        <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <h3 class="service-title">Competitive Interest Rates</h3>
+                    <p class="service-desc">Offering flexible and affordable interest rates tailored to suit your financial situation.</p>
+                    <div class="service-footer">
+                        <span class="service-link">Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
                     </div>
-                </div>
-                <div class="srv-card gsap-reveal">
-                    <div class="srv-bg"></div>
-                    <div class="srv-inner">
-                        <div class="srv-num">05</div>
-                        <div class="srv-icon"><i class="fas fa-file-contract"></i></div>
-                        <h3>Flexible Repayment</h3>
-                        <p>Customizable repayment schedules — monthly, quarterly, or as per mutual agreement.</p>
-                        <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="service-hover-bg"></div>
+                </article>
+
+                <article class="service-card" data-animate="scroll">
+                    <span class="service-index">03</span>
+                    <div class="service-icon-box">
+                        <i class="fas fa-user-tie"></i>
                     </div>
-                </div>
-                <div class="srv-card gsap-reveal">
-                    <div class="srv-bg"></div>
-                    <div class="srv-inner">
-                        <div class="srv-num">06</div>
-                        <div class="srv-icon"><i class="fas fa-shield-alt"></i></div>
-                        <h3>Trusted & Secure</h3>
-                        <p>Transparent dealings with proper documentation. Your trust and security is our top priority.</p>
-                        <div class="srv-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <h3 class="service-title">Personal Loans</h3>
+                    <p class="service-desc">Quick and hassle-free personal loans for emergencies, education, medical, or any personal needs.</p>
+                    <div class="service-footer">
+                        <span class="service-link">Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
                     </div>
-                </div>
+                    <div class="service-hover-bg"></div>
+                </article>
+
+                <article class="service-card" data-animate="scroll">
+                    <span class="service-index">04</span>
+                    <div class="service-icon-box">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3 class="service-title">Business Loans</h3>
+                    <p class="service-desc">Funding solutions for small businesses, startups, and entrepreneurs to grow their ventures.</p>
+                    <div class="service-footer">
+                        <span class="service-link">Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="service-hover-bg"></div>
+                </article>
+
+                <article class="service-card" data-animate="scroll">
+                    <span class="service-index">05</span>
+                    <div class="service-icon-box">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 class="service-title">Flexible Repayment</h3>
+                    <p class="service-desc">Customizable repayment schedules — monthly, quarterly, or as per mutual agreement.</p>
+                    <div class="service-footer">
+                        <span class="service-link">Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="service-hover-bg"></div>
+                </article>
+
+                <article class="service-card" data-animate="scroll">
+                    <span class="service-index">06</span>
+                    <div class="service-icon-box">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-title">Trusted & Secure</h3>
+                    <p class="service-desc">Transparent dealings with proper documentation. Your trust and security is our top priority.</p>
+                    <div class="service-footer">
+                        <span class="service-link">Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="service-hover-bg"></div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- ==================== SKILLS ==================== -->
-    <section class="section skills" id="skills">
-        <div class="container">
-            <div class="sec-header gsap-reveal">
-                <div class="sec-label center">
-                    <div class="label-line"></div>
-                    <span>My Expertise</span>
-                    <div class="label-line"></div>
+    <!-- ============ EXPERTISE / SKILLS SECTION ============ -->
+    <section class="expertise-section" id="expertise">
+        <div class="section-container">
+            <div class="section-header" data-animate="scroll">
+                <div class="section-eyebrow centered">
+                    <span class="eyebrow-line"></span>
+                    <span class="eyebrow-text">My Expertise</span>
+                    <span class="eyebrow-line"></span>
                 </div>
-                <h2 class="sec-title">Skills & <span class="gold-text">Expertise</span></h2>
-                <p class="sec-sub">Core competencies developed through years of experience</p>
+                <h2 class="section-heading">Skills & <span class="text-highlight">Expertise</span></h2>
+                <p class="section-subtext">Core competencies developed through years of professional experience</p>
             </div>
 
-            <div class="skills-layout">
-                <div class="skills-bars gsap-reveal">
-                    <div class="sk-item">
-                        <div class="sk-head"><span>Financial Analysis</span><span class="sk-pct">95%</span></div>
-                        <div class="sk-track"><div class="sk-fill" data-w="95"></div></div>
+            <div class="expertise-layout">
+                <!-- Skill Bars -->
+                <div class="expertise-bars" data-animate="scroll">
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <span class="skill-label">Financial Analysis</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-progress" data-progress="95"></div>
+                        </div>
                     </div>
-                    <div class="sk-item">
-                        <div class="sk-head"><span>Loan Management</span><span class="sk-pct">92%</span></div>
-                        <div class="sk-track"><div class="sk-fill" data-w="92"></div></div>
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <span class="skill-label">Loan Management</span>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-progress" data-progress="92"></div>
+                        </div>
                     </div>
-                    <div class="sk-item">
-                        <div class="sk-head"><span>Risk Assessment</span><span class="sk-pct">88%</span></div>
-                        <div class="sk-track"><div class="sk-fill" data-w="88"></div></div>
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <span class="skill-label">Risk Assessment</span>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-progress" data-progress="88"></div>
+                        </div>
                     </div>
-                    <div class="sk-item">
-                        <div class="sk-head"><span>Interest Rate Planning</span><span class="sk-pct">90%</span></div>
-                        <div class="sk-track"><div class="sk-fill" data-w="90"></div></div>
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <span class="skill-label">Interest Rate Planning</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
                     </div>
-                    <div class="sk-item">
-                        <div class="sk-head"><span>Client Relations</span><span class="sk-pct">96%</span></div>
-                        <div class="sk-track"><div class="sk-fill" data-w="96"></div></div>
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <span class="skill-label">Client Relations</span>
+                            <span class="skill-percentage">96%</span>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-progress" data-progress="96"></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skills-tools gsap-reveal">
-                    <h3>Tools & Technologies</h3>
+                <!-- Tools Grid -->
+                <div class="expertise-tools" data-animate="scroll">
+                    <h3 class="tools-heading">Tools & Technologies</h3>
                     <div class="tools-grid">
-                        <div class="tool"><i class="fas fa-file-excel"></i><span>Excel</span></div>
-                        <div class="tool"><i class="fas fa-chart-bar"></i><span>Power BI</span></div>
-                        <div class="tool"><i class="fas fa-database"></i><span>SQL</span></div>
-                        <div class="tool"><i class="fas fa-book"></i><span>Tally</span></div>
-                        <div class="tool"><i class="fas fa-cogs"></i><span>SAP</span></div>
-                        <div class="tool"><i class="fas fa-chart-area"></i><span>Tableau</span></div>
-                        <div class="tool"><i class="fas fa-code"></i><span>Python</span></div>
-                        <div class="tool"><i class="fas fa-receipt"></i><span>QuickBooks</span></div>
-                        <div class="tool"><i class="fas fa-broadcast-tower"></i><span>Bloomberg</span></div>
+                        <div class="tool-card">
+                            <div class="tool-icon"><i class="fas fa-file-excel"></i></div>
+                            <span class="tool-name">Excel</span>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon"><i class="fas fa-chart-bar"></i></div>
+                            <span class="tool-name">Power BI</span>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon"><i class="fas fa-database"></i></div>
+                            <span class="tool-name">SQL</span>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon"><i class="fas fa-book"></i></div>
+                            <span class="tool-name">Tally</span>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon"><i class="fas fa-cogs"></i></div>
+                            <span class="tool-name">SAP</span>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon"><i class="fas fa-chart-area"></i></div>
+                            <span class="tool-name">Tableau</span>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon"><i class="fas fa-code"></i></div>
+                            <span class="tool-name">Python</span>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon"><i class="fas fa-receipt"></i></div>
+                            <span class="tool-name">QuickBooks</span>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon"><i class="fas fa-broadcast-tower"></i></div>
+                            <span class="tool-name">Bloomberg</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== VISITING CARD ==================== -->
-    <section class="section vcard-section" id="card">
-        <div class="container">
-            <div class="sec-header gsap-reveal">
-                <div class="sec-label center">
-                    <div class="label-line"></div>
-                    <span>My Card</span>
-                    <div class="label-line"></div>
+    <!-- ============ VISITING CARD SECTION ============ -->
+    <section class="vcard-section" id="vcard">
+        <div class="section-container">
+            <div class="section-header" data-animate="scroll">
+                <div class="section-eyebrow centered">
+                    <span class="eyebrow-line"></span>
+                    <span class="eyebrow-text">My Card</span>
+                    <span class="eyebrow-line"></span>
                 </div>
-                <h2 class="sec-title">Visiting <span class="gold-text">Card</span></h2>
-                <p class="sec-sub">Click on the card to flip</p>
+                <h2 class="section-heading">Visiting <span class="text-highlight">Card</span></h2>
+                <p class="section-subtext">Click on the card to see the other side</p>
             </div>
 
-            <div class="vcard-wrap gsap-reveal">
-                <div class="vcard-3d" id="vcard3d">
-                    <div class="vcard-face vcard-front">
-                        <img src="images/card-front.png" alt="Card Front" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                        <div class="card-placeholder" style="display:none">
+            <div class="vcard-display" data-animate="scroll">
+                <div class="vcard-flipper" id="vcardFlipper">
+                    <div class="vcard-side vcard-front-side">
+                        <img src="images/card-front.png" alt="Card Front"
+                             onerror="this.style.display='none'; this.parentElement.querySelector('.vcard-placeholder').style.display='flex'">
+                        <div class="vcard-placeholder">
                             <i class="fas fa-id-card"></i>
                             <p>card-front.png</p>
+                            <small>Place your card front image here</small>
                         </div>
                     </div>
-                    <div class="vcard-face vcard-back">
-                        <img src="images/card-back.png" alt="Card Back" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                        <div class="card-placeholder" style="display:none">
+                    <div class="vcard-side vcard-back-side">
+                        <img src="images/card-back.png" alt="Card Back"
+                             onerror="this.style.display='none'; this.parentElement.querySelector('.vcard-placeholder').style.display='flex'">
+                        <div class="vcard-placeholder">
                             <i class="fas fa-id-card"></i>
                             <p>card-back.png</p>
+                            <small>Place your card back image here</small>
                         </div>
                     </div>
                 </div>
-                <p class="vcard-hint"><i class="fas fa-hand-pointer"></i> Click to flip</p>
+                <p class="vcard-flip-hint">
+                    <i class="fas fa-hand-pointer"></i>
+                    <span>Click to flip the card</span>
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- ==================== CONTACT ==================== -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <div class="sec-header gsap-reveal">
-                <div class="sec-label center">
-                    <div class="label-line"></div>
-                    <span>Get In Touch</span>
-                    <div class="label-line"></div>
+    <!-- ============ CONTACT SECTION ============ -->
+    <section class="contact-section" id="contact">
+        <div class="section-container">
+            <div class="section-header" data-animate="scroll">
+                <div class="section-eyebrow centered">
+                    <span class="eyebrow-line"></span>
+                    <span class="eyebrow-text">Get In Touch</span>
+                    <span class="eyebrow-line"></span>
                 </div>
-                <h2 class="sec-title">Contact <span class="gold-text">Me</span></h2>
-                <p class="sec-sub">Let's discuss your financial needs</p>
+                <h2 class="section-heading">Contact <span class="text-highlight">Me</span></h2>
+                <p class="section-subtext">Let's discuss your financial needs</p>
             </div>
 
-            <div class="contact-layout">
-                <div class="contact-cards">
-                    <a href="tel:+918054186763" class="cc-card gsap-reveal">
-                        <div class="cc-ic"><i class="fas fa-phone"></i></div>
-                        <h4>Phone</h4>
-                        <p>+91 80541 86763</p>
-                        <span class="cc-act">Call Now <i class="fas fa-arrow-right"></i></span>
-                    </a>
-                    <a href="https://wa.me/918054186763" target="_blank" class="cc-card gsap-reveal">
-                        <div class="cc-ic"><i class="fab fa-whatsapp"></i></div>
-                        <h4>WhatsApp</h4>
-                        <p>+91 80541 86763</p>
-                        <span class="cc-act">Message <i class="fas fa-arrow-right"></i></span>
-                    </a>
-                    <a href="https://www.instagram.com/finance_analyst26" target="_blank" class="cc-card gsap-reveal">
-                        <div class="cc-ic"><i class="fab fa-instagram"></i></div>
-                        <h4>Instagram</h4>
-                        <p>@finance_analyst26</p>
-                        <span class="cc-act">Follow <i class="fas fa-arrow-right"></i></span>
-                    </a>
-                </div>
+            <!-- Contact Cards Row -->
+            <div class="contact-cards-row" data-animate="scroll">
+                <a href="tel:+918054186763" class="contact-info-card">
+                    <div class="cic-icon"><i class="fas fa-phone"></i></div>
+                    <h4 class="cic-title">Phone</h4>
+                    <p class="cic-value">+91 80541 86763</p>
+                    <span class="cic-action">Call Now <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="https://wa.me/918054186763" target="_blank" class="contact-info-card">
+                    <div class="cic-icon"><i class="fab fa-whatsapp"></i></div>
+                    <h4 class="cic-title">WhatsApp</h4>
+                    <p class="cic-value">+91 80541 86763</p>
+                    <span class="cic-action">Message <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="https://www.instagram.com/finance_analyst26" target="_blank" class="contact-info-card">
+                    <div class="cic-icon"><i class="fab fa-instagram"></i></div>
+                    <h4 class="cic-title">Instagram</h4>
+                    <p class="cic-value">@finance_analyst26</p>
+                    <span class="cic-action">Follow <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
 
-                <div class="contact-form-area gsap-reveal">
-                    <div class="contact-form-box">
-                        <h3>Send a <span class="gold-text">Message</span></h3>
-                        <form id="contactForm">
-                            <div class="form-row">
-                                <div class="form-grp">
-                                    <input type="text" id="fname" required placeholder=" ">
-                                    <label for="fname">Full Name</label>
-                                </div>
-                                <div class="form-grp">
-                                    <input type="text" id="fphone" required placeholder=" ">
-                                    <label for="fphone">Phone Number</label>
-                                </div>
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper" data-animate="scroll">
+                <div class="contact-form-card">
+                    <h3 class="form-heading">Send a <span class="text-highlight">Message</span></h3>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <input type="text" id="cfName" required placeholder=" ">
+                                <label for="cfName">Full Name</label>
+                                <span class="input-highlight"></span>
                             </div>
-                            <div class="form-grp">
-                                <input type="text" id="fsubject" required placeholder=" ">
-                                <label for="fsubject">Subject</label>
+                            <div class="input-group">
+                                <input type="tel" id="cfPhone" required placeholder=" ">
+                                <label for="cfPhone">Phone Number</label>
+                                <span class="input-highlight"></span>
                             </div>
-                            <div class="form-grp">
-                                <textarea id="fmessage" rows="5" required placeholder=" "></textarea>
-                                <label for="fmessage">Your Message</label>
-                            </div>
-                            <button type="submit" class="btn btn-gold btn-full">
-                                <span>Send via WhatsApp</span>
-                                <i class="fab fa-whatsapp"></i>
-                            </button>
-                        </form>
-                    </div>
-
-                    <div class="social-area">
-                        <p>Connect with me</p>
-                        <div class="socials">
-                            <a href="https://www.instagram.com/finance_analyst26" target="_blank" class="soc-btn"><i class="fab fa-instagram"></i></a>
-                            <a href="https://wa.me/918054186763" target="_blank" class="soc-btn"><i class="fab fa-whatsapp"></i></a>
-                            <a href="tel:+918054186763" class="soc-btn"><i class="fas fa-phone"></i></a>
                         </div>
-                    </div>
+                        <div class="input-group">
+                            <input type="text" id="cfSubject" required placeholder=" ">
+                            <label for="cfSubject">Subject</label>
+                            <span class="input-highlight"></span>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="cfMessage" rows="5" required placeholder=" "></textarea>
+                            <label for="cfMessage">Your Message</label>
+                            <span class="input-highlight"></span>
+                        </div>
+                        <button type="submit" class="cta-btn cta-primary submit-btn">
+                            <span class="cta-text">Send via WhatsApp</span>
+                            <span class="cta-icon"><i class="fab fa-whatsapp"></i></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="contact-social" data-animate="scroll">
+                <p class="social-label">Connect With Me</p>
+                <div class="social-icons-row">
+                    <a href="https://www.instagram.com/finance_analyst26" target="_blank" class="social-circle" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/918054186763" target="_blank" class="social-circle" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="tel:+918054186763" class="social-circle" title="Call">
+                        <i class="fas fa-phone"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
+    <!-- ============ FOOTER ============ -->
+    <footer class="main-footer">
+        <div class="section-container">
+            <div class="footer-upper">
                 <div class="footer-brand">
-                    <div class="logo-icon"><span>A</span></div>
-                    <div><h4>Abhinoor Singh</h4><p>Financial Analyst</p></div>
+                    <div class="brand-icon">A</div>
+                    <div>
+                        <h4>Abhinoor Singh</h4>
+                        <p>Financial Analyst</p>
+                    </div>
                 </div>
-                <div class="footer-nav">
-                    <a href="#home">Home</a>
+                <nav class="footer-links">
+                    <a href="#hero">Home</a>
                     <a href="#about">About</a>
                     <a href="#services">Services</a>
+                    <a href="#expertise">Expertise</a>
                     <a href="#contact">Contact</a>
-                </div>
+                </nav>
             </div>
-            <div class="footer-line"></div>
-            <div class="footer-bottom">
+            <div class="footer-divider"></div>
+            <div class="footer-lower">
                 <p>&copy; 2025 Abhinoor Singh. All rights reserved.</p>
-                <p>Crafted with <i class="fas fa-heart gold-text"></i> by Gurtej Singh</p>
+                <p>Crafted with <i class="fas fa-heart text-highlight-inline"></i> by Gurtej Singh</p>
             </div>
         </div>
     </footer>
 
-    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+    <!-- Back to Top Button -->
+    <button class="btn-back-top" id="btnBackTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
-    <!-- GSAP loaded BEFORE script.js — NOT defer -->
+    <!-- Scripts — loaded in order, NO defer -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 </body>
-</html>
+                                </html>
