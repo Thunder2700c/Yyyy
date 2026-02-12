@@ -1,9 +1,3 @@
-/* =============================================================
-   ABHINOOR SINGH — FINANCIAL ANALYST
-   Black & Gold Premium Theme
-   ALL ELEMENTS VISIBLE BY DEFAULT — GSAP only animates
-   ============================================================= */
-
 /* ==================== CSS VARIABLES ==================== */
 :root {
     /* Gold Palette */
@@ -126,7 +120,7 @@ ul, ol {
     list-style: none;
 }
 
-/* Layout Container */
+/* Container */
 .section-container {
     max-width: var(--container-width);
     margin: 0 auto;
@@ -134,7 +128,7 @@ ul, ol {
     width: 100%;
 }
 
-/* Gold Text Highlight */
+/* Gold Text */
 .text-highlight {
     background: var(--gold-gradient);
     -webkit-background-clip: text;
@@ -151,6 +145,7 @@ ul, ol {
     background: var(--gold-500);
     color: var(--dark-900);
 }
+
 
 /* ==================== PRELOADER ==================== */
 #preloader {
@@ -189,7 +184,9 @@ ul, ol {
 }
 
 @keyframes preloaderSpin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .preloader-letter {
@@ -245,6 +242,7 @@ ul, ol {
     text-transform: uppercase;
 }
 
+
 /* ==================== CUSTOM CURSOR ==================== */
 .custom-cursor {
     display: none;
@@ -278,7 +276,7 @@ ul, ol {
         position: fixed;
         will-change: transform;
         transform: translate(-50%, -50%);
-        transition: width 0.3s, height 0.3s, border-color 0.3s;
+        transition: width 0.3s, height 0.3s, border-color 0.3s, background 0.3s;
     }
 
     .cursor-outline.expanded {
@@ -293,10 +291,11 @@ ul, ol {
     }
 
     a, button, .service-card, .tool-card, .contact-info-card,
-    .social-circle, .vcard-flipper, .btn-back-top {
+    .social-circle, .vcard-scene, .btn-back-top, .menu-toggle {
         cursor: none;
     }
 }
+
 
 /* ==================== NAVIGATION ==================== */
 .main-header {
@@ -328,7 +327,7 @@ ul, ol {
     align-items: center;
 }
 
-/* Brand / Logo */
+/* Brand Logo */
 .brand {
     display: flex;
     align-items: center;
@@ -373,7 +372,7 @@ ul, ol {
     margin-top: 2px;
 }
 
-/* Desktop Nav */
+/* Desktop Nav Menu */
 .nav-menu {
     display: flex;
     align-items: center;
@@ -388,6 +387,7 @@ ul, ol {
     border-radius: var(--radius-full);
     transition: color var(--transition-fast), background var(--transition-fast);
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-item:hover,
@@ -412,6 +412,7 @@ ul, ol {
     left: calc(50% - 10px);
 }
 
+/* CTA Button in Nav */
 .nav-item-cta {
     background: var(--gold-gradient-btn) !important;
     color: var(--dark-900) !important;
@@ -431,7 +432,7 @@ ul, ol {
     display: none !important;
 }
 
-/* Hamburger */
+/* Hamburger Button */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -528,6 +529,7 @@ ul, ol {
     border-color: transparent;
 }
 
+
 /* ==================== HERO SECTION ==================== */
 .hero-section {
     min-height: 100vh;
@@ -617,7 +619,7 @@ ul, ol {
     flex: 1;
 }
 
-/* Availability Badge */
+/* Badge */
 .availability-badge {
     display: inline-flex;
     align-items: center;
@@ -675,7 +677,7 @@ ul, ol {
     background-clip: text;
 }
 
-/* Hero Designation */
+/* Designation */
 .hero-designation {
     display: flex;
     align-items: center;
@@ -698,7 +700,7 @@ ul, ol {
     text-transform: uppercase;
 }
 
-/* Hero Description */
+/* Description */
 .hero-description {
     font-size: 1.05rem;
     color: var(--text-400);
@@ -769,7 +771,7 @@ ul, ol {
     font-size: 1rem;
 }
 
-/* Hero Image Area */
+/* Hero Image */
 .hero-image-wrapper {
     position: relative;
     width: 380px;
@@ -824,7 +826,7 @@ ul, ol {
     pointer-events: none;
 }
 
-/* Info Float Cards */
+/* Float Cards */
 .info-float-card {
     position: absolute;
     background: rgba(20, 20, 20, 0.92);
@@ -839,16 +841,8 @@ ul, ol {
     box-shadow: var(--shadow-md);
 }
 
-.ifc-1 {
-    top: 25px;
-    right: -15px;
-}
-
-.ifc-2 {
-    bottom: 90px;
-    left: -35px;
-}
-
+.ifc-1 { top: 25px; right: -15px; }
+.ifc-2 { bottom: 90px; left: -35px; }
 .ifc-3 {
     bottom: 15px;
     right: 15px;
@@ -897,7 +891,7 @@ ul, ol {
     font-weight: 500;
 }
 
-/* Decorative Elements */
+/* Decorative */
 .hero-decor-ring {
     position: absolute;
     width: 200px;
@@ -944,9 +938,7 @@ ul, ol {
     flex-wrap: wrap;
 }
 
-.stat-box {
-    text-align: center;
-}
+.stat-box { text-align: center; }
 
 .stat-value {
     font-family: 'Playfair Display', serif;
@@ -956,9 +948,7 @@ ul, ol {
     line-height: 1;
 }
 
-.stat-suffix {
-    font-size: 1.6rem;
-}
+.stat-suffix { font-size: 1.6rem; }
 
 .stat-name {
     font-size: 0.78rem;
@@ -1019,7 +1009,8 @@ ul, ol {
     text-transform: uppercase;
 }
 
-/* ==================== SECTION COMMON STYLES ==================== */
+
+/* ==================== SECTION COMMON ==================== */
 .about-section,
 .services-section,
 .expertise-section,
@@ -1080,12 +1071,17 @@ ul, ol {
     margin: 0 auto;
 }
 
+
 /* ==================== ABOUT SECTION ==================== */
 .about-layout {
     display: grid;
     grid-template-columns: 1fr 1.25fr;
     gap: 80px;
     align-items: center;
+}
+
+.about-image-side {
+    position: relative;
 }
 
 .about-image-frame {
@@ -1126,10 +1122,6 @@ ul, ol {
 .about-image-fallback span {
     font-size: 0.8rem;
     opacity: 0.5;
-}
-
-.about-image-side {
-    position: relative;
 }
 
 .about-experience-tag {
@@ -1242,6 +1234,7 @@ ul, ol {
     flex-wrap: wrap;
 }
 
+
 /* ==================== MARQUEE ==================== */
 .marquee-strip {
     padding: 22px 0;
@@ -1283,7 +1276,8 @@ ul, ol {
     100% { transform: translateX(-50%); }
 }
 
-/* ==================== SERVICE CARDS ==================== */
+
+/* ==================== SERVICES ==================== */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1408,7 +1402,8 @@ ul, ol {
     transform: translateX(4px);
 }
 
-/* ==================== EXPERTISE / SKILLS ==================== */
+
+/* ==================== EXPERTISE ==================== */
 .expertise-layout {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -1450,7 +1445,7 @@ ul, ol {
     background: var(--gold-gradient-btn);
     border-radius: 10px;
     width: 0%;
-    transition: none; /* GSAP handles this */
+    /* transition added by JS */
 }
 
 .tools-heading {
@@ -1494,37 +1489,60 @@ ul, ol {
     font-weight: 500;
 }
 
-/* ==================== VISITING CARD ==================== */
+
+/* ==================== VISITING CARD — FIXED 3D FLIP ==================== */
+
+/* Container for everything */
 .vcard-display {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* This is the outer wrapper — it holds the perspective */
-.vcard-flipper {
+/*
+   SCENE: The perspective container.
+   This element provides 3D perspective but does NOT rotate.
+   The .is-flipped class is toggled on THIS element.
+*/
+.vcard-scene {
     width: 580px;
     height: 340px;
     perspective: 1200px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    /* Prevent iOS tap highlight */
+    touch-action: manipulation;
+    /* Prevent double-tap zoom on mobile */
+    user-select: none;
+    -webkit-user-select: none;
 }
 
-/* This is the inner box that actually rotates */
-.vcard-flipper-inner {
+/*
+   FLIPPER: The inner element that ACTUALLY rotates.
+   Has preserve-3d so children (front/back) live in 3D space.
+*/
+.vcard-flipper {
     position: relative;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* When flipped class is on the OUTER wrapper, rotate the INNER */
-.vcard-flipper.flipped .vcard-flipper-inner {
+/*
+   When scene gets .is-flipped → rotate the inner flipper 180deg
+*/
+.vcard-scene.is-flipped .vcard-flipper {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
 
-/* Both card faces */
-.vcard-side {
+/*
+   BOTH FACES: Absolutely positioned, hidden when facing away
+*/
+.vcard-face {
     position: absolute;
     top: 0;
     left: 0;
@@ -1539,26 +1557,33 @@ ul, ol {
     box-shadow: var(--shadow-lg);
 }
 
-/* Front side — default visible */
-.vcard-front-side {
+/*
+   FRONT FACE: Default visible (rotateY 0)
+*/
+.vcard-front {
     z-index: 2;
     transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
 }
 
-/* Back side — flipped 180 so it's hidden initially */
-.vcard-back-side {
+/*
+   BACK FACE: Rotated 180 so it starts hidden
+*/
+.vcard-back {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
 
-/* Images inside cards */
-.vcard-side img {
+/* Images fill the entire face */
+.vcard-face img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: var(--radius-lg);
 }
 
-/* Placeholder when image doesn't load */
+/* Placeholder when images don't load */
 .vcard-placeholder {
     display: flex;
     flex-direction: column;
@@ -1580,6 +1605,7 @@ ul, ol {
 .vcard-placeholder p {
     font-size: 1rem;
     color: var(--text-400);
+    margin: 0;
 }
 
 .vcard-placeholder small {
@@ -1601,22 +1627,8 @@ ul, ol {
     color: var(--gold-500);
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-    .vcard-flipper {
-        width: 100%;
-        max-width: 400px;
-        height: 250px;
-    }
-}
 
-@media (max-width: 480px) {
-    .vcard-flipper {
-        height: 210px;
-    }
-}
-
-/* ==================== CONTACT SECTION ==================== */
+/* ==================== CONTACT ==================== */
 .contact-cards-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1833,6 +1845,7 @@ ul, ol {
     box-shadow: var(--gold-glow);
 }
 
+
 /* ==================== FOOTER ==================== */
 .main-footer {
     background: var(--dark-600);
@@ -1905,6 +1918,7 @@ ul, ol {
     color: var(--text-500);
 }
 
+
 /* ==================== BACK TO TOP ==================== */
 .btn-back-top {
     position: fixed;
@@ -1937,6 +1951,7 @@ ul, ol {
     transform: translateY(-5px);
     box-shadow: var(--gold-glow-strong);
 }
+
 
 /* ==================== RESPONSIVE ==================== */
 
@@ -2014,6 +2029,12 @@ ul, ol {
     .contact-cards-row {
         grid-template-columns: 1fr;
     }
+
+    /* VCard tablet */
+    .vcard-scene {
+        width: 480px;
+        height: 290px;
+    }
 }
 
 /* Mobile */
@@ -2023,17 +2044,15 @@ ul, ol {
         --section-padding: 70px;
     }
 
-    /* Hide custom cursor on mobile */
     .custom-cursor {
         display: none !important;
     }
 
     body, a, button, .service-card, .tool-card, .contact-info-card,
-    .social-circle, .vcard-flipper, .btn-back-top {
+    .social-circle, .vcard-scene, .btn-back-top, .menu-toggle {
         cursor: auto !important;
     }
 
-    /* Nav */
     .nav-menu {
         display: none;
     }
@@ -2042,7 +2061,6 @@ ul, ol {
         display: flex;
     }
 
-    /* Hero */
     .hero-section {
         padding-top: calc(var(--nav-height) + 20px);
     }
@@ -2068,32 +2086,24 @@ ul, ol {
         padding: 24px 20px;
     }
 
-    .stat-value {
-        font-size: 2rem;
-    }
+    .stat-value { font-size: 2rem; }
+    .stat-separator { height: 30px; }
 
-    .stat-separator {
-        height: 30px;
-    }
-
-    /* Services */
     .services-grid {
         grid-template-columns: 1fr;
     }
 
-    /* Skills Tools */
     .tools-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    /* VCard */
-    .vcard-flipper {
+    /* VCard mobile */
+    .vcard-scene {
         width: 100%;
         max-width: 400px;
         height: 250px;
     }
 
-    /* Contact Form */
     .form-grid {
         grid-template-columns: 1fr;
     }
@@ -2102,7 +2112,6 @@ ul, ol {
         padding: 30px 20px;
     }
 
-    /* Footer */
     .footer-upper {
         flex-direction: column;
         text-align: center;
@@ -2123,7 +2132,7 @@ ul, ol {
     }
 }
 
-/* Small Mobile */
+/* Small mobile */
 @media (max-width: 480px) {
     .hero-stats-strip {
         flex-direction: column;
@@ -2139,7 +2148,7 @@ ul, ol {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .vcard-flipper {
+    .vcard-scene {
         height: 210px;
     }
 
@@ -2150,4 +2159,4 @@ ul, ol {
     .hero-heading {
         font-size: clamp(2.5rem, 10vw, 3.5rem);
     }
-    }
+   }
